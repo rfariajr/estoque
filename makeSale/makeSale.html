@@ -5,31 +5,32 @@
         <title>Estoque - Realizar venda</title>
     </head>
     <body>
-        <fieldset>
-            <form id="form" name="form" method="POST" action="http://localhost/estoque2/makeSale/makeSale.php">
-                <label for="name">Nome:</label>
-                <br>
-                <input id="name" name="name" required/>
-                <br>
-                <br>
-                <label for="qnt">Quantidade:</label>
-                <br>
-                <input type="number" step="0.01" value="0.00" min="0.01" id="qnt" name="qnt" disabled required/>
-                <br>
-                <br>
-                <label for="sellValue">Preço de venda:</label>
-                <br>
-                <input type="number" step="0.01" value="0.00" min="0.01" id="sellValue" name="sellValue" disabled required/>
-                <br>
-                <br>
-                <input type="checkbox" id="confirmation" name="confirmation" disabled required/>
-                <label for="confirmation">Confirmar os dados preenchidos</label>
-                <br>
-                <br>
-                <input type="submit" value="Enviar" onclick="return validateForm()" id="bttnSend" name="bttnSend" disabled/>
-                <input type="reset" value="Limpar" onclick="return resetForm()" id="bttnReset" name="bttnReset"/>
-            </form>
-        </fieldset>
+        <form id="form" name="form" method="POST" action="http://localhost/estoque2/makeSale/makeSale.php">
+            <label for="name">Nome:</label>
+            <br>
+            <input id="name" name="name" required/>
+            <br>
+            <br>
+            <label for="qnt">Quantidade:</label>
+            <br>
+            <input type="number" step="0.01" value="0.00" min="0.01" id="qnt" name="qnt" disabled required/>
+            <span id="alertNumStock" name="alertNumStock"></span>
+            <br>
+            <br>
+            <label for="sellValue">Preço de venda:</label>
+            <br>
+            <input type="number" step="0.01" value="0.00" min="0.01" id="sellValue" name="sellValue" disabled required/>
+            <br>
+            <br>
+            <input type="checkbox" id="confirmation" name="confirmation" disabled required/>
+            <label for="confirmation">Confirmar os dados preenchidos</label>
+            <br>
+            <br>
+            <input type="submit" value="Enviar" onclick="return validateForm()" id="bttnSend" name="bttnSend" disabled/>
+            <input type="reset" value="Limpar" onclick="return resetForm()" id="bttnReset" name="bttnReset"/>
+
+            <input type="hidden" id="dataFetch" name="dataFetch"/>
+        </form>
         <script src="makeSale.js"></script>
     </body>
 </html>
