@@ -11,11 +11,20 @@ if(!$connection) {
 
 $name = $_POST["name"];
 $sql = "SELECT * FROM estoque WHERE nome = '$name'";
-$inquiry = mysqli_query($connection, $sql);
-if(!$inquiry) {
+$query = mysqli_query($connection, $sql);
+if(!$query) {
     die("<br>Erro: ".mysqli_error($connection));
 }
-$result = mysqli_num_rows($inquiry);
-print($result);
+
+if(mysqli_num_rows($query) == 0) {
+    print("0");
+}
+
+else {
+    $row = mysqli_fetch_assoc($query);
+    $response = $row["id"] . ";" . $row["nome"] . ";" . $row["qnt"] . ";" . $row["precoVenda"] . ";" . $row["valEstoque"] . ";" . $row["obs"];
+    print($response);
+}
+
 mysqli_close($connection);
 ?>
