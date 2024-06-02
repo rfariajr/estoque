@@ -20,12 +20,29 @@ document.getElementById("name").onblur = function() {
         var url = "http://localhost/estoque2/stockFetch.php";
         fetch(url, {method: "POST", body: formData}).then(response => response.text()).then(
             numQuery => {
-                if(numQuery > 0) {
+                if(numQuery != 0) {
                     alert("Esse produto já existe no banco de dados");
 
                     document.getElementById("name").value = "";
+
+                    document.getElementById("confirmation").checked = false;
+
+                    document.getElementById("bttnSend").disabled = true;
                 }
             }
         ).catch(error => alert('Error: ' + error));
     }
+}
+
+document.getElementById("confirmation").onclick = function(){
+    if(document.getElementById("confirmation").checked == true) {
+        document.getElementById("bttnSend").disabled = false;
+    }
+    else {
+        document.getElementById("bttnSend").disabled = true;
+    }
+}
+
+function resetForm() {
+    document.getElementById("bttnSend").disabled = true;
 }

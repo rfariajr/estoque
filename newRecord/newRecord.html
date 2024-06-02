@@ -5,34 +5,41 @@
         <title>Estoque - Criar ficha</title>
     </head>
     <body>
-        <fieldset>
-            <form id="form" name="form" method="POST" action="http://localhost/estoque2/newRecord/newRecord.php">
-                <label for="name">Nome: </label>
-                <input id="name" name="name" required/>
-                <br>
-                <br>
-                <label for="qnt">Quantidade: </label>
-                <input type="number" min="0.01" step="0.01" id="qnt" name="qnt" required/>
-                <br>
-                <br>
-                <label for="buyValue">Valor de compra: </label>
-                <input type="number" min="0" step="0.01" id="buyValue" name="buyValue" required/>
-                <br>
-                <br>
-                <label for="sellValue">Valor de venda: </label>
-                <input type="number" min="0" step="0.01" id="sellValue" name="sellValue" required/>
-                <br>
-                <br>
-                <label for="obs">Observações: </label>
-                <input id="obs" name="obs">
-                <br>
-                <br>
-                <input type="submit" value="Enviar" id="bttnSend" name="bttnSend" onclick="return validateForm()"/>
-                <input type="reset" value="Limpar"/>
+        <form id="form" name="form" method="POST" action="http://localhost/estoque2/newRecord/newRecord.php">
+            <label for="name">Nome: </label>
+            <br>
+            <input id="name" name="name" required/>
+            <br>
+            <br>
+            <label for="qnt">Quantidade: </label>
+            <br>
+            <input type="number" min="0.01" step="0.01" id="qnt" name="qnt" required/>
+            <br>
+            <br>
+            <label for="buyValue">Valor de compra: </label>
+            <br>
+            <input type="number" min="0" step="0.01" id="buyValue" name="buyValue" required/>
+            <br>
+            <br>
+            <label for="sellValue">Valor de venda: </label>
+            <br>
+            <input type="number" min="0" step="0.01" id="sellValue" name="sellValue" required/>
+            <br>
+            <br>
+            <label for="obs">Observações: </label>
+            <br>
+            <input id="obs" name="obs"/>
+            <br>
+            <br>
+            <input type="checkbox" id="confirmation" name="confirmation" required/>
+            <label for="confirmation">Confirmar os dados preenchidos</label>
+            <br>
+            <br>
+            <input type="submit" value="Enviar" id="bttnSend" name="bttnSend" onclick="return validateForm()" disabled/>
+            <input type="reset" value="Limpar" id="bttnReset" name ="bttnReset" onclick="return resetForm()"/>
 
-                <input type="hidden" id="data" name="data"/>
-            </form>
-        </fieldset>
+            <input type="hidden" id="data" name="data"/>
+        </form>
         <script src="newRecord.js"></script>
     </body>
 </html>
