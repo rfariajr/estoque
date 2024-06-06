@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Estoque - Alterar ficha</title>
+    </head>
+    <body>
+        <form id="form" id="form" method="POST" action="http://localhost/estoque2/changeRecord/changeRecord.php">
+            <label for="name">Nome:</label>
+            <br>
+            <input id="name" name="name" required>
+            <br>
+            <br>
+            <input type="checkbox" id="newNameCheck" name="newNameCheck" onclick="return initialOptionName()">
+            <label for="newNameCheck">Alterar nome</label>
+
+            <input type="checkbox" id="newSellValueCheck" name="newSellValueCheck" onclick="return initialOptionSell()">
+            <label for="newSellValueCheck">Alterar preço de venda</label>
+
+            <input type="checkbox" id="delete" name="delete" onclick="return initialOptionDelete()">
+            <label for="delete">Deletar ficha</label>
+            <br>
+            <br>
+            <label for="newName">Novo nome:</label>
+            <br>
+            <input id="newName" name="newName" disabled>
+            <br>
+            <br>
+            <label>Novo valor de venda</label>
+            <br>
+            <input type="number" id="newSellValue" name="newSellValue" min="0.01" step="0.01" value="0.00" disabled>
+            <br>
+            <br>
+            <input type="checkbox" id="confirmation" name="confirmation" required disabled>
+            <label for="confirmation">Confirmar os dados preenchidos</label>
+            <br>
+            <br>
+            <input type="submit" id="bttnSend" name="bttnSend" value="Enviar" onclick="return submitForm()" disabled>
+            <input type="reset" id="bttnReset" name="bttnReset" value="Limpar" onclick="return resetForm()">
+
+            <input type="hidden" id="dataFetch" name="dataFetch">
+            <input type="hidden" id="options" name="options">
+        </form>
+        <script src="changeRecord.js"></script>
+    </body>
+</html>
